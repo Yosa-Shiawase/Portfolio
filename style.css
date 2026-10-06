@@ -1,0 +1,155 @@
+:root {
+    --primary: #00d4ff;
+    --secondary: #00ffaa;
+    --bg-dark: #030303;
+    --glass: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.07);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/* FULL PAGE DOTTED EFFECT SETUP */
+#canvas1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind everything */
+    pointer-events: none;
+}
+
+/* REFINED HERO SECTION */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.main-title {
+    font-family: 'Syncopate', sans-serif;
+    font-size: clamp(2.5rem, 8vw, 6rem);
+    font-weight: 700;
+    letter-spacing: 15px;
+    text-transform: uppercase;
+    background: linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.hero-line {
+    width: 100px;
+    height: 2px;
+    background: var(--primary);
+    margin-bottom: 30px;
+    box-shadow: 0 0 15px var(--primary);
+}
+
+.subtitle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: var(--secondary);
+    margin-bottom: 40px;
+    opacity: 0.8;
+}
+
+.separator {
+    color: #fff;
+    padding: 0 10px;
+}
+
+/* SKILLS TAGS IMPROVED */
+.skills-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+}
+
+.skills-tag {
+    padding: 10px 22px;
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    border-radius: 4px; /* More professional sharp edges */
+    font-size: 0.75rem;
+    font-family: 'JetBrains Mono';
+    backdrop-filter: blur(10px);
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase;
+}
+
+.skills-tag:hover {
+    border-color: var(--secondary);
+    background: rgba(0, 255, 170, 0.05);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* NAVIGATION */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 30px 60px;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+.nav-logo { font-weight: 800; font-size: 1.2rem; letter-spacing: 2px; }
+
+/* LAYOUT */
+.main-content {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+.glass-card {
+    background: var(--glass);
+    border: 1px solid var(--glass-border);
+    padding: 60px;
+    border-radius: 2px;
+    margin-bottom: 100px;
+    backdrop-filter: blur(20px);
+}
+
+/* CUSTOM CURSOR */
+#cursor-dot {
+    position: fixed;
+    width: 6px; height: 6px;
+    background: var(--primary);
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+}
+#cursor-outline {
+    position: fixed;
+    width: 40px; height: 40px;
+    border: 1px solid var(--primary);
+    border-radius: 50%;
+    z-index: 1000;
+    pointer-events: none;
+    transition: transform 0.1s ease-out;
+}
